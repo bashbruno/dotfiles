@@ -5,7 +5,7 @@ local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd", "tailwindcss", "gopls" }
+local servers = { "html", "cssls", "tsserver", "clangd", "tailwindcss", "gopls", "eslint", "svelte" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -30,15 +30,4 @@ lspconfig.gopls.setup {
     },
   },
 }
-
-lspconfig.tsserver.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  init_options = {
-    preferences = {
-      disableSuggestions = true,
-    },
-  },
-}
---
 --lspconfig.pyright.setup { blabla}

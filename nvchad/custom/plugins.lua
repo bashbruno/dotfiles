@@ -50,6 +50,14 @@ local plugins = {
   },
 
   {
+    "windwp/nvim-ts-autotag",
+    ft = { "javascript", "typescript", "javascriptreact", "typescriptreact", "html"},
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end
+  },
+
+  {
     "olivercederborg/poimandres.nvim",
     lazy = false,
     priority = 1000,
