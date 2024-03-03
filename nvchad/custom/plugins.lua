@@ -15,6 +15,11 @@ local plugins = {
 
   -- override plugin configs
   {
+    "Exafunction/codeium.vim",
+    event = "BufEnter",
+  },
+
+  {
     "williamboman/mason.nvim",
     opts = overrides.mason,
   },
@@ -30,7 +35,6 @@ local plugins = {
   },
 
   -- Install a plugin
-
 
   {
     "max397574/better-escape.nvim",
@@ -51,10 +55,10 @@ local plugins = {
 
   {
     "windwp/nvim-ts-autotag",
-    ft = { "javascript", "typescript", "javascriptreact", "typescriptreact", "html"},
+    ft = { "javascript", "typescript", "javascriptreact", "typescriptreact", "html" },
     config = function()
       require("nvim-ts-autotag").setup()
-    end
+    end,
   },
 
   {
