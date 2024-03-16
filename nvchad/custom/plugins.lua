@@ -4,6 +4,7 @@ local overrides = require "custom.configs.overrides"
 local plugins = {
 
   -- Override plugin definition options
+  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 
   {
     "neovim/nvim-lspconfig",
