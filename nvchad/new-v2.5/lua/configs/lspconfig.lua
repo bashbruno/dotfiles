@@ -5,8 +5,7 @@ local on_init = configs.on_init
 local capabilities = configs.capabilities
 
 local lspconfig = require("lspconfig")
-lspconfig.biome.setup({})
-local servers = { "html", "cssls", "tsserver", "tailwindcss", "biome", "eslint" }
+local servers = { "html", "cssls", "tsserver", "tailwindcss", "eslint" }
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({

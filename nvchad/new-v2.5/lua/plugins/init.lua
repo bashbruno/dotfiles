@@ -121,7 +121,6 @@ return {
 				"typescript-language-server",
 				"tailwindcss-language-server",
 				"prettier",
-				"biome",
 				"eslint-lsp",
 			},
 		},
