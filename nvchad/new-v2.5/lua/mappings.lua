@@ -23,16 +23,30 @@ map("n", "<C-e>", "<C-u>zz")
 
 vim.opt.relativenumber = true
 
--- floating diagnostic
+-- open floating diagnostic
 map("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show floating [D]iagnostic" })
 
--- conform format on save
+-- conform auto format on save
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*",
 	callback = function(args)
 		require("conform").format({ bufnr = args.buf })
 	end,
 })
+
+-- codeium
+map("i", "<C-c>", function()
+	return vim.fn["codeium#Accept"]()
+end, { expr = true, silent = true })
+map("i", "<M-]>", function()
+	return vim.fn["codeium#CycleCompletions"](1)
+end, { expr = true, silent = true })
+map("i", "<M-[>", function()
+	return vim.fn["codeium#CycleCompletions"](-1)
+end, { expr = true, silent = true })
+map("i", "<c-x>", function()
+	return vim.fn["codeium#Clear"]()
+end, { expr = true, silent = true })
 
 -- telescope
 map("n", "<leader>fz", function()
@@ -42,8 +56,20 @@ map("n", "<leader>fz", function()
 	}))
 end, { desc = "[Z] Fuzzy search current buffer" })
 map("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
-map("n", "<leader>fw", builtin.grep_string, { desc = "[F]find current [W]ord" })
+map("n", "<leader>fw", builtin.grep_string, { desc = "[F]ind current [W]ord" })
 map("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind by [G]rep" })
 map("n", "<leader>fn", function()
 	builtin.find_files({ cwd = vim.fn.stdpath("config") })
 end, { desc = "[F]ind [N]eovim files" })
+
+-- remove some unwanted NvChad mappings from the whichkey pop when pressing <leader>f
+-- Telescope find all files
+map("n", "<leader>fa", "")
+-- Telescope find old files
+map("n", "<leader>fo", "")
+-- Telescope find buffers
+map("n", "<leader>fb", "")
+-- Telescope help page
+map("n", "<leader>fh", "")
+-- Format file with conform
+map("n", "<leader>fm", "")
