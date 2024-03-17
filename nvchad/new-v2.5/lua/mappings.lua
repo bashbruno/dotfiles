@@ -1,8 +1,7 @@
 require("nvchad.mappings")
 
--- add yours here
-
 local map = vim.keymap.set
+local builtin = require("telescope.builtin")
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 
@@ -34,3 +33,17 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		require("conform").format({ bufnr = args.buf })
 	end,
 })
+
+-- telescope
+map("n", "<leader>fz", function()
+	builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+		winblend = 10,
+		previewer = false,
+	}))
+end, { desc = "[Z] Fuzzy search current buffer" })
+map("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
+map("n", "<leader>fw", builtin.grep_string, { desc = "[F]find current [W]ord" })
+map("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind by [G]rep" })
+map("n", "<leader>fn", function()
+	builtin.find_files({ cwd = vim.fn.stdpath("config") })
+end, { desc = "[F]ind [N]eovim files" })
