@@ -141,6 +141,11 @@ return {
 
 	{
 		"nvim-treesitter/nvim-treesitter",
+		init = function(plugin)
+			require("lazy.core.loader").add_to_rtp(plugin)
+			require("nvim-treesitter.query_predicates")
+			require("nvim-ts-autotag").setup()
+		end,
 		opts = {
 			ensure_installed = {
 				"lua",
@@ -152,9 +157,23 @@ return {
 				"markdown",
 			},
 			auto_install = true,
+			autotag = { enable = true },
 			indent = {
 				enable = true,
 			},
 		},
+	},
+
+	{
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("nvim-ts-autotag").setup()
+			require("nvim-treesitter.configs").setup({
+				autotag = {
+					enable = true,
+					enable_rename = true,
+				},
+			})
+		end,
 	},
 }
