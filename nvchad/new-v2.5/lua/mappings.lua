@@ -52,7 +52,7 @@ end, { expr = true, silent = true })
 map("n", "<leader>fz", function()
 	builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 		winblend = 10,
-		previewer = false,
+		previewer = true,
 	}))
 end, { desc = "[Z] Fuzzy search current buffer" })
 map("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })

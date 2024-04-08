@@ -25,13 +25,13 @@ return {
 		event = "BufEnter",
 	},
 
-	-- {
-	-- 	"jose-elias-alvarez/null-ls.nvim",
-	-- 	ft = "go",
-	-- 	opts = function()
-	-- 		return require("configs.null-ls")
-	-- 	end,
-	-- },
+	{
+		"jose-elias-alvarez/null-ls.nvim",
+		ft = "go",
+		opts = function()
+			return require("configs.null-ls")
+		end,
+	},
 
 	{
 		"nvim-tree/nvim-tree.lua",
@@ -122,6 +122,7 @@ return {
 				"tailwindcss-language-server",
 				"prettier",
 				"eslint-lsp",
+				"gopls",
 			},
 		},
 	},
