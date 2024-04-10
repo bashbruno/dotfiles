@@ -74,6 +74,8 @@ vim.diagnostic.config {
   float = { border = 'rounded' },
 }
 
+-- close current open buffer
+vim.keymap.set('n', '<leader>x', '<cmd>bd<CR>', { desc = 'Close current [X] buffer' })
 -- Codeium accept suggestion Ctrl+c
 vim.keymap.set('i', '<C-c>', function()
   return vim.fn['codeium#Accept']()
@@ -479,6 +481,7 @@ require('lazy').setup({
         tsx = { 'prettier' },
         html = { 'prettier' },
         css = { 'prettier' },
+        less = { 'prettier' },
         json = { 'prettier' },
       },
     },
