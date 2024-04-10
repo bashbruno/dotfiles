@@ -1,6 +1,9 @@
 local M = {}
 
 M.ui = {
+	telescope = {
+		style = "bordered",
+	},
 	theme = "rosepine",
 	statusline = {
 		theme = "vscode_colored",
