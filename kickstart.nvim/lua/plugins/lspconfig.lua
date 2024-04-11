@@ -20,12 +20,6 @@ return {
         { '│', 'FloatBorder' },
       }
 
-      -- Add the border on hover and on signature help popup window
-      local handlers = {
-        ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
-        ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
-      }
-
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
@@ -107,7 +101,6 @@ return {
       local servers = {
         prettier = {},
         tsserver = {
-          handlers = handlers,
           settings = {
             completions = {
               completeFunctionCalls = true,
@@ -187,6 +180,11 @@ return {
           function(server_name)
             local server = servers[server_name] or {}
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+            server.handlers = {
+              -- Add the border on hover and on signature help popup window
+              ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+              ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+            }
             require('lspconfig')[server_name].setup(server)
           end,
         },
