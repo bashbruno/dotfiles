@@ -5,10 +5,6 @@ return {
   {
     'nvim-tree/nvim-tree.lua',
     opts = {
-      disable_netrw = true,
-      hijack_netrw = true,
-      hijack_cursor = true,
-      hijack_unnamed_buffer_when_opening = false,
       sort = {
         sorter = 'case_sensitive',
       },
@@ -47,7 +43,6 @@ return {
             },
           },
         },
-        highlight_git = true,
       },
     },
   },
