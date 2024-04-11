@@ -5,7 +5,7 @@ return {
     branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
-      { -- If encountering errors, see telescope-fzf-native README for install instructions
+      {
         'nvim-telescope/telescope-fzf-native.nvim',
         build = 'make',
         cond = function()
@@ -24,6 +24,17 @@ return {
               cterm_color = '65',
               name = 'tsx',
             },
+            lock = { icon = '󰌾', name = 'Lock' },
+            mp3 = { icon = '󰎆', name = 'Mp3' },
+            mp4 = { icon = '', name = 'Mp4' },
+            out = { icon = '', name = 'Out' },
+            ['robots.txt'] = { icon = '󰚩', name = 'Robots' },
+            ttf = { icon = '', name = 'TrueTypeFont' },
+            rpm = { icon = '', name = 'Rpm' },
+            woff = { icon = '', name = 'WebOpenFontFormat' },
+            woff2 = { icon = '', name = 'WebOpenFontFormat2' },
+            xz = { icon = '', name = 'Xz' },
+            zip = { icon = '', name = 'Zip' },
           },
         },
       },

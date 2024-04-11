@@ -17,6 +17,7 @@
 --   },
 -- }
 --
+
 return {
   'folke/tokyonight.nvim',
   priority = 1000,
@@ -35,3 +36,25 @@ return {
     vim.cmd.hi 'Comment gui=none'
   end,
 }
+
+-- return {
+--   {
+--     'ellisonleao/gruvbox.nvim',
+--     priority = 1000,
+--     config = true,
+--     opts = {
+--       transparent_mode = true,
+--       italic = {
+--         strings = false,
+--         emphasis = false,
+--         comments = false,
+--         operators = false,
+--         folds = false,
+--       },
+--     },
+--     init = function()
+--       vim.cmd.colorscheme 'gruvbox'
+--       vim.cmd.hi 'Comment gui=none'
+--     end,
+--   },
+-- }
