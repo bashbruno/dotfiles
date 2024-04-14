@@ -80,6 +80,13 @@ return {
             end
           end
 
+          if client and client.name == 'tsserver' then
+            vim.keymap.set('n', '<leader>co', function()
+              local params = { command = '_typescript.organizeImports', arguments = { vim.api.nvim_buf_get_name(0) }, title = '' }
+              vim.lsp.buf.execute_command(params)
+            end, { buffer = event.buf, desc = 'LSP: [O]rganize Imports' })
+          end
+
           if client and client.server_capabilities.documentHighlightProvider then
             vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
               buffer = event.buf,
