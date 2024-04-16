@@ -18,6 +18,8 @@ vim.opt.mouse = 'a'
 
 -- Don't show the mode, since it's already in status line
 -- vim.opt.showmode = false
+vim.opt.laststatus = 2 -- Or 3 for global statusline
+vim.opt.statusline = ' %f %m %= %l:%c'
 
 -- Sync clipboard between OS and Neovim.
 vim.opt.clipboard = 'unnamedplus'

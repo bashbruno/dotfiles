@@ -4,10 +4,16 @@ return {
     name = 'rose-pine',
     priority = 1000,
     opts = {
+      dim_inactive_windows = true,
       styles = {
         bold = true,
         italic = false,
-        transparency = true,
+        -- transparency = true,
+      },
+      highlight_groups = {
+        -- StatusLine = { fg = 'rose', bg = 'rose', blend = 10 },
+        CursorLineNr = { fg = 'love' },
+        -- StatusLineNC = { fg = 'subtle', bg = 'surface' },
       },
     },
     init = function()
