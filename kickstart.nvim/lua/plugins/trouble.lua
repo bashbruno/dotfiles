@@ -6,7 +6,7 @@ return {
       {
         '<leader>tt',
         '<cmd>Trouble diagnostics toggle<cr>',
-        desc = '[T]rouble Workspace Diagnostics)',
+        desc = '[T]rouble Workspace Diagnostics',
       },
       {
         '<leader>tT',

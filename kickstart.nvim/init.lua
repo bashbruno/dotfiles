@@ -117,4 +117,7 @@ require('lazy').setup({
   { import = 'plugins' },
 }, {
   ui = {},
+  change_detection = {
+    notify = false,
+  },
 })

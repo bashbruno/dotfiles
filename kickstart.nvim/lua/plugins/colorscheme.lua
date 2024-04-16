@@ -8,10 +8,10 @@ return {
       styles = {
         bold = true,
         italic = false,
-        -- transparency = true,
+        transparency = false,
       },
       highlight_groups = {
-        -- StatusLine = { fg = 'rose', bg = 'rose', blend = 10 },
+        StatusLine = { fg = 'iris', bg = 'iris', blend = 10 },
         CursorLineNr = { fg = 'love' },
         -- StatusLineNC = { fg = 'subtle', bg = 'surface' },
       },
