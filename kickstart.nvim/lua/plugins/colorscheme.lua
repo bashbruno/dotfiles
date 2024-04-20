@@ -1,14 +1,14 @@
 return {
   {
-    'rose-pine/neovim',
     name = 'rose-pine',
+    'rose-pine/neovim',
     priority = 1000,
     opts = {
-      dim_inactive_windows = true,
+      dim_inactive_windows = false,
       styles = {
         bold = true,
         italic = false,
-        transparency = false,
+        transparency = true,
       },
       highlight_groups = {
         StatusLine = { fg = 'iris', bg = 'iris', blend = 10 },
@@ -142,6 +142,21 @@ return {
 --     },
 --     init = function()
 --       vim.cmd.colorscheme 'darkplus'
+--       vim.cmd.hi 'Comment gui=none'
+--     end,
+--   },
+-- }
+
+-- return {
+--   {
+--     'EdenEast/nightfox.nvim',
+--     priority = 1000,
+--     opts = {
+--       transparent = true,
+--       dim_inactive = true,
+--     },
+--     init = function()
+--       vim.cmd.colorscheme 'duskfox'
 --       vim.cmd.hi 'Comment gui=none'
 --     end,
 --   },
