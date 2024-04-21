@@ -184,7 +184,7 @@ return {
           local config = vim.fn['gruvbox_material#get_configuration']()
           local palette = vim.fn['gruvbox_material#get_palette'](config.background, config.foreground, config.colors_override)
           local set_hl = vim.fn['gruvbox_material#highlight']
-          set_hl('CursorLineNr', palette.red, palette.none)
+          set_hl('CursorLineNr', palette.aqua, palette.none)
         end,
       })
 
