@@ -2,6 +2,9 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- https://templ.guide/commands-and-tools/ide-support#neovim--050
+vim.filetype.add { extension = { templ = 'templ' } }
+
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1

@@ -23,6 +23,7 @@ return {
         'javascript',
         'typescript',
         'tsx',
+        'templ',
       },
       query_linter = {
         enable = true,
