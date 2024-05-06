@@ -1,27 +1,27 @@
-return {
-  {
-    name = 'rose-pine',
-    'rose-pine/neovim',
-    priority = 1000,
-    opts = {
-      dim_inactive_windows = false,
-      styles = {
-        bold = true,
-        italic = false,
-        transparency = true,
-      },
-      highlight_groups = {
-        StatusLine = { fg = 'iris', bg = 'iris', blend = 10 },
-        CursorLineNr = { fg = 'love' },
-        -- StatusLineNC = { fg = 'subtle', bg = 'surface' },
-      },
-    },
-    init = function()
-      vim.cmd.colorscheme 'rose-pine'
-      vim.cmd.hi 'Comment gui=none'
-    end,
-  },
-}
+-- return {
+--   {
+--     name = 'rose-pine',
+--     'rose-pine/neovim',
+--     priority = 1000,
+--     opts = {
+--       dim_inactive_windows = false,
+--       styles = {
+--         bold = true,
+--         italic = false,
+--         transparency = true,
+--       },
+--       highlight_groups = {
+--         StatusLine = { fg = 'iris', bg = 'iris', blend = 10 },
+--         CursorLineNr = { fg = 'love' },
+--         -- StatusLineNC = { fg = 'subtle', bg = 'surface' },
+--       },
+--     },
+--     init = function()
+--       vim.cmd.colorscheme 'rose-pine'
+--       vim.cmd.hi 'Comment gui=none'
+--     end,
+--   },
+-- }
 
 -- return {
 --   {
@@ -213,3 +213,69 @@ return {
 --     end,
 --   },
 -- }
+
+-- return {
+--   {
+--     'e-q/okcolors.nvim',
+--     name = 'okcolors',
+--     opts = {
+--       variant = 'sharp', -- smoort or sharp
+--     },
+--     init = function()
+--       vim.cmd.colorscheme 'okcolors'
+--       vim.cmd.hi 'Comment gui=none'
+--     end,
+--   },
+-- }
+
+-- return {
+--   {
+--     'tiagovla/tokyodark.nvim',
+--     opts = {
+--       transparent_background = false,
+--       styles = {
+--         comments = { italic = false },
+--         keywords = { italic = false },
+--         identifiers = { italic = false },
+--         functions = {},
+--         variables = {},
+--       },
+--       terminal_colors = true,
+--     },
+--     config = function(_, opts)
+--       require('tokyodark').setup(opts) -- calling setup is optional
+--       vim.cmd [[colorscheme tokyodark]]
+--     end,
+--   },
+-- }
+
+return {
+  {
+    'Mofiqul/vscode.nvim',
+    config = function()
+      local c = require('vscode.colors').get_colors()
+      require('vscode').setup {
+        italic_comments = false,
+        transparent = true,
+        disable_nvimtree_bg = true,
+        group_overrides = {
+          CursorLineNr = { fg = c.vscPink },
+          StatusLine = { fg = c.vscGray, bg = 'NONE', blend = 10 },
+          ['@variable.builtin.typescript'] = { fg = c.vscBlue, bg = 'NONE' },
+          ['@property.method.typescript'] = { fg = c.vscYellow, bg = 'NONE' },
+          ['@constructor.typescript'] = { fg = c.vscBlue, bg = 'NONE' },
+          ['@keyword.typescript'] = { fg = c.vscBlue, bg = 'NONE' },
+          ['@keyword.return.typescript'] = { fg = c.vscPink, bg = 'NONE' },
+          ['@tag.tsx'] = { fg = c.vscBlueGreen, bg = 'NONE' },
+          ['@type.definition.go'] = { fg = c.vscBlueGreen, bg = 'NONE' },
+          ['@keyword.type.go'] = { fg = c.vscPink, bg = 'NONE' },
+          ['@keyword.function.go'] = { fg = c.vscPink, bg = 'NONE' },
+        },
+      }
+    end,
+    init = function()
+      vim.cmd.colorscheme 'vscode'
+      vim.cmd.hi 'Comment gui=none'
+    end,
+  },
+}

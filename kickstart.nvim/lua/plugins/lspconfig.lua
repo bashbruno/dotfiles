@@ -116,9 +116,10 @@ return {
         },
         html = {},
         cssls = {},
-        tailwindcss = { filetypes = { 'templ' }, init_options = { userLanguages = { templ = 'html' } } },
+        tailwindcss = { filetypes = { 'templ', 'typescriptreact', 'javascriptreact' }, init_options = { userLanguages = { templ = 'html' } } },
         eslint = {},
         templ = {},
+        htmx = {},
         gopls = {
           cmd = { 'gopls' },
           filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
