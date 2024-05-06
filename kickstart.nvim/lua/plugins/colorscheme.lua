@@ -261,6 +261,7 @@ return {
         group_overrides = {
           CursorLineNr = { fg = c.vscPink },
           StatusLine = { fg = c.vscGray, bg = 'NONE', blend = 10 },
+          ModeMsg = { fg = c.vscYellow, bg = 'NONE', blend = 10 },
           ['@variable.builtin.typescript'] = { fg = c.vscBlue, bg = 'NONE' },
           ['@property.method.typescript'] = { fg = c.vscYellow, bg = 'NONE' },
           ['@constructor.typescript'] = { fg = c.vscBlue, bg = 'NONE' },
