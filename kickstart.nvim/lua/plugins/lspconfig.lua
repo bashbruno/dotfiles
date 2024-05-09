@@ -106,7 +106,7 @@ return {
 
       local util = require 'lspconfig/util'
       local servers = {
-        prettier = {},
+        prettierd = {},
         tsserver = {
           settings = {
             completions = {
@@ -118,6 +118,8 @@ return {
         cssls = {},
         tailwindcss = { filetypes = { 'templ', 'typescriptreact', 'javascriptreact' }, init_options = { userLanguages = { templ = 'html' } } },
         eslint = {},
+        emmet_language_server = { filetypes = { 'css', 'templ', 'html', 'javascript', 'javascriptreact', 'less', 'sass', 'scss', 'typescriptreact' } },
+        jsonls = {},
         templ = {},
         htmx = {},
         gopls = {

@@ -2,6 +2,8 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.opt.swapfile = false
+
 -- https://templ.guide/commands-and-tools/ide-support#neovim--050
 vim.filetype.add { extension = { templ = 'templ' } }
 
