@@ -107,13 +107,13 @@ return {
       local util = require 'lspconfig/util'
       local servers = {
         prettierd = {},
-        tsserver = {
-          settings = {
-            completions = {
-              completeFunctionCalls = true,
-            },
-          },
-        },
+        -- tsserver = {
+        --   settings = {
+        --     completions = {
+        --       completeFunctionCalls = true,
+        --     },
+        --   },
+        -- },
         html = {},
         cssls = {},
         tailwindcss = { filetypes = { 'templ', 'typescriptreact', 'javascriptreact' }, init_options = { userLanguages = { templ = 'html' } } },
