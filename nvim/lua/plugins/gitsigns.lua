@@ -1,22 +1,22 @@
 return {
-  {
-    'lewis6991/gitsigns.nvim',
-    event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
-    opts = {
-      signs = {
-        add = { text = '▎' },
-        change = { text = '▎' },
-        delete = { text = '' },
-        topdelete = { text = '' },
-        changedelete = { text = '▎' },
-        untracked = { text = '▎' },
-      },
-      on_attach = function(buffer)
-        local gs = package.loaded.gitsigns
+	{
+		"lewis6991/gitsigns.nvim",
+		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+		opts = {
+			signs = {
+				add = { text = "" },
+				change = { text = "" },
+				delete = { text = "" },
+				topdelete = { text = "" },
+				changedelete = { text = "" },
+				untracked = { text = "" },
+			},
+			on_attach = function(buffer)
+				local gs = package.loaded.gitsigns
 
-        local function map(mode, l, r, desc)
-          vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
-        end
+				local function map(mode, l, r, desc)
+					vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
+				end
 
         -- stylua: ignore start
         -- map("n", "]h", gs.next_hunk, "Next Hunk")
@@ -28,10 +28,10 @@ return {
         -- map("n", "<leader>ghR", gs.reset_buffer, "Reset Buffer")
         -- map("n", "<leader>ghp", gs.preview_hunk_inline, "Preview Hunk Inline")
         map("n", "<leader>gb", function() gs.blame_line() end, "[B]lame Line")
-        -- map("n", "<leader>ghd", gs.diffthis, "Diff This")
-        -- map("n", "<leader>ghD", function() gs.diffthis("~") end, "Diff This ~")
-        -- map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
-      end,
-    },
-  },
+				-- map("n", "<leader>ghd", gs.diffthis, "Diff This")
+				-- map("n", "<leader>ghD", function() gs.diffthis("~") end, "Diff This ~")
+				-- map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
+			end,
+		},
+	},
 }
