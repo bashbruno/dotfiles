@@ -86,7 +86,7 @@ return {
 		priority = 1000,
 		lazy = true,
 		opts = {
-			transparent_background = true,
+			transparent_background = false,
 			no_italic = true,
 			integrations = {
 				cmp = true,

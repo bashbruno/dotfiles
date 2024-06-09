@@ -37,7 +37,7 @@ return {
 				enable = true,
 				use_languagetree = true,
 			},
-			indent = { enable = true },
+			-- indent = { enable = true },
 		},
 		config = function(_, opts)
 			---@diagnostic disable-next-line: missing-fields

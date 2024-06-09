@@ -1,0 +1,18 @@
+[shell]
+program = 'Ubuntu'
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+normal.family = "JetBrainsMono Nerd Font"
+size = 14
+
+[cursor]
+style.blinking = "On"
+
+[window]
+  startup_mode = "Maximized"
+
+[colors.primary]
+  background = "#181718"
