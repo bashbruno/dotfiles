@@ -44,7 +44,7 @@ return {
 		priority = 1000,
 		lazy = true,
 		opts = {
-			transparent = true,
+			transparent = false,
 			styles = {
 				sidebars = "transparent",
 				floats = "transparent",
@@ -53,8 +53,8 @@ return {
 			},
 		},
 		init = function()
-			-- vim.cmd.colorscheme 'tokyonight'
-			-- vim.cmd.hi 'Comment gui=none'
+			-- vim.cmd.colorscheme("tokyonight-night")
+			-- vim.cmd.hi("Comment gui=none")
 		end,
 	},
 
@@ -196,8 +196,8 @@ return {
 			})
 		end,
 		init = function()
-			vim.cmd.colorscheme("vscode")
-			vim.cmd.hi("Comment gui=none")
+			-- vim.cmd.colorscheme("vscode")
+			-- vim.cmd.hi("Comment gui=none")
 		end,
 	},
 
@@ -236,6 +236,28 @@ return {
 		init = function()
 			-- vim.cmd("colorscheme nordic")
 			-- vim.cmd.hi("Comment gui=none")
+		end,
+	},
+
+	{
+		"datsfilipe/vesper.nvim",
+		lazy = true,
+		priority = 1000,
+		opts = {
+			transparent = true, -- Boolean: Sets the background to transparent
+			italics = {
+				comments = false, -- Boolean: Italicizes comments
+				keywords = false, -- Boolean: Italicizes keywords
+				functions = false, -- Boolean: Italicizes functions
+				strings = false, -- Boolean: Italicizes strings
+				variables = false, -- Boolean: Italicizes variables
+			},
+			overrides = {}, -- A dictionary of group names, can be a function returning a dictionary or a table.
+			palette_overrides = {},
+		},
+		init = function()
+			vim.cmd.colorscheme("vesper")
+			vim.cmd.hi("Comment gui=none")
 		end,
 	},
 }
