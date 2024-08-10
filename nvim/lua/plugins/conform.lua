@@ -7,17 +7,17 @@ return {
 				local disable_filetypes = { c = true, cpp = true }
 				return {
 					timeout_ms = 500,
-					lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
-					async = false,
+					lsp_fallback = true,
+					async = true,
 				}
 			end,
 			formatters_by_ft = {
 				lua = { "stylua" },
-				javascript = { "prettierd", "prettier" },
-				javascriptreact = { "prettierd", "prettier" },
-				typescript = { "prettierd", "prettier" },
-				typescriptreact = { "prettierd", "prettier" },
-				tsx = { "prettierd", "prettier" },
+				javascript = { "prettierd" },
+				javascriptreact = { "prettierd" },
+				typescript = { "prettierd" },
+				typescriptreact = { "prettierd" },
+				tsx = { "prettierd" },
 				html = { "prettierd", "prettier" },
 				css = { "prettierd", "prettier" },
 				less = { "prettierd", "prettier" },

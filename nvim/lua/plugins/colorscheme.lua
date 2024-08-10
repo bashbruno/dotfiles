@@ -9,7 +9,7 @@ return {
 			styles = {
 				bold = true,
 				italic = false,
-				transparency = false,
+				transparency = true,
 			},
 			highlight_groups = {
 				StatusLine = { fg = "iris", bg = "iris", blend = 10 },
@@ -18,8 +18,8 @@ return {
 			},
 		},
 		init = function()
-			-- vim.cmd.colorscheme("rose-pine")
-			-- vim.cmd.hi("Comment gui=none")
+			vim.cmd.colorscheme("rose-pine")
+			vim.cmd.hi("Comment gui=none")
 		end,
 	},
 
@@ -44,7 +44,7 @@ return {
 		priority = 1000,
 		lazy = true,
 		opts = {
-			transparent = false,
+			transparent = true,
 			styles = {
 				sidebars = "transparent",
 				floats = "transparent",
@@ -196,8 +196,8 @@ return {
 			})
 		end,
 		init = function()
-			-- vim.cmd.colorscheme("vscode")
 			-- vim.cmd.hi("Comment gui=none")
+			-- vim.cmd.colorscheme("vscode")
 		end,
 	},
 
@@ -256,8 +256,52 @@ return {
 			palette_overrides = {},
 		},
 		init = function()
-			vim.cmd.colorscheme("vesper")
-			vim.cmd.hi("Comment gui=none")
+			-- vim.cmd.colorscheme("vesper")
+			-- vim.cmd.hi("Comment gui=none")
+		end,
+	},
+
+	{
+		"gmr458/cold.nvim",
+		lazy = true,
+		priority = 1000,
+		opts = {},
+		init = function()
+			-- vim.cmd.colorscheme("cold")
+			-- vim.cmd.hi("Comment gui=none")
+		end,
+	},
+
+	{
+		"sho-87/kanagawa-paper.nvim",
+		lazy = true,
+		priority = 1000,
+		opts = {},
+		init = function()
+			-- vim.cmd.colorscheme("kanagawa-paper")
+			-- vim.cmd.hi("Comment gui=none")
+		end,
+	},
+
+	{
+		"marko-cerovac/material.nvim",
+		lazy = true,
+		priority = 1000,
+		opts = {},
+		init = function()
+			-- vim.cmd.colorscheme("kanagawa-paper")
+			-- vim.cmd.hi("Comment gui=none")
+		end,
+	},
+
+	{
+		"samharju/serene.nvim",
+		lazy = true,
+		priority = 1000,
+		opts = {},
+		init = function()
+			-- vim.cmd.colorscheme("kanagawa-paper")
+			-- vim.cmd.hi("Comment gui=none")
 		end,
 	},
 }
