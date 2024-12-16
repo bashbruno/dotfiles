@@ -5,6 +5,14 @@ return {
       colorscheme = "vscode",
     },
   },
+
+  {
+    "vague2k/vague.nvim",
+    config = function()
+      require("vague").setup({})
+    end,
+  },
+
   {
     name = "rose-pine",
     "rose-pine/neovim",
@@ -18,31 +26,11 @@ return {
         transparency = true,
       },
       highlight_groups = {
-        StatusLine = { fg = "iris", bg = "iris", blend = 10 },
-        CursorLineNr = { fg = "love" },
+        -- StatusLine = { fg = "iris", bg = "iris", blend = 10 },
+        -- CursorLineNr = { fg = "love" },
         -- StatusLineNC = { fg = 'subtle', bg = 'surface' },
       },
     },
-    init = function()
-      -- vim.cmd.colorscheme("rose-pine")
-      -- vim.cmd.hi("Comment gui=none")
-    end,
-  },
-
-  {
-    "olivercederborg/poimandres.nvim",
-    priority = 1000,
-    lazy = true,
-    config = function()
-      require("poimandres").setup({
-        disable_italics = true,
-        disable_background = false,
-      })
-    end,
-    init = function()
-      -- vim.cmd 'colorscheme poimandres'
-      -- vim.cmd.hi 'Comment gui=none'
-    end,
   },
 
   {
@@ -58,65 +46,6 @@ return {
         keywords = { italic = false },
       },
     },
-    init = function()
-      -- vim.cmd.colorscheme("tokyonight-night")
-      -- vim.cmd.hi("Comment gui=none")
-    end,
-  },
-
-  {
-    "rebelot/kanagawa.nvim",
-    priority = 1000,
-    lazy = true,
-    opts = {
-      transparent = true,
-      commentStyle = { italic = false },
-      keywordStyle = { italic = false },
-      statementStyle = { italic = false },
-      colors = {
-        theme = {
-          all = {
-            ui = {
-              bg_gutter = "none",
-            },
-          },
-        },
-      },
-    },
-    init = function() end,
-  },
-
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    lazy = true,
-    opts = {
-      transparent_background = false,
-      no_italic = true,
-      integrations = {
-        cmp = true,
-        gitsigns = true,
-        nvimtree = true,
-        treesitter = true,
-        telescope = {
-          enabled = true,
-        },
-        which_key = true,
-      },
-    },
-    init = function() end,
-  },
-
-  {
-    "EdenEast/nightfox.nvim",
-    priority = 1000,
-    lazy = true,
-    opts = {
-      transparent = true,
-      dim_inactive = true,
-    },
-    init = function() end,
   },
 
   {
@@ -145,37 +74,12 @@ return {
           set_hl("CursorLineNr", palette.aqua, palette.none)
         end,
       })
-
-      -- vim.cmd.colorscheme 'gruvbox-material'
-      -- vim.cmd.hi 'Comment gui=none'
-    end,
-  },
-
-  {
-    "datsfilipe/min-theme.nvim",
-    lazy = true,
-    priority = 1000,
-    opts = {
-      transparent = true,
-      italics = {
-        comments = false,
-        keywords = false,
-        functions = false,
-        strings = false,
-        variables = false,
-      },
-      overrides = {
-        ["@tag.builtin.tsx"] = { fg = "#FFAB70", bg = "NONE" },
-      },
-    },
-    init = function()
-      -- vim.cmd.colorscheme("min-theme")
-      -- vim.cmd.hi("Comment gui=none")
     end,
   },
 
   {
     "Mofiqul/vscode.nvim",
+    lazy = true,
     config = function()
       local c = require("vscode.colors").get_colors()
       require("vscode").setup({
@@ -183,9 +87,9 @@ return {
         transparent = true,
         disable_nvimtree_bg = true,
         group_overrides = {
-          CursorLineNr = { fg = c.vscPink },
+          -- CursorLineNr = { fg = c.vscPink },
           StatusLine = { fg = c.vscGray, bg = "NONE", blend = 10 },
-          ModeMsg = { fg = c.vscYellow, bg = "NONE", blend = 10 },
+          ModeMsg = { fg = c.vscGray, bg = "NONE", blend = 10 },
           ["@variable.builtin.typescript"] = { fg = c.vscBlue, bg = "NONE" },
           ["@property.method.typescript"] = { fg = c.vscYellow, bg = "NONE" },
           ["@constructor.typescript"] = { fg = c.vscBlue, bg = "NONE" },
@@ -198,113 +102,29 @@ return {
         },
       })
     end,
-    init = function()
-      -- vim.cmd.hi("Comment gui=none")
-      -- vim.cmd.colorscheme("vscode")
-    end,
   },
 
   {
-    "AlexvZyl/nordic.nvim",
-    lazy = false,
-    priority = 1000,
+    "tjdevries/colorbuddy.nvim",
+    lazy = true,
     config = function()
-      -- require("nordic").load()
-      require("nordic").setup({
-        -- This callback can be used to override the colors used in the palette.
-        on_palette = function(palette)
-          return palette
-        end,
-        -- Enable bold keywords.
-        bold_keywords = true,
-        -- Enable italic comments.
-        italic_comments = false,
-        -- Enable general editor background transparency.
-        transparent_bg = false,
-        -- Enable brighter float border.
-        bright_border = false,
-        -- Reduce the overall amount of blue in the theme (diverges from base Nord).
-        reduced_blue = true,
-        -- Swap the dark background with the normal one.
-        swap_backgrounds = false,
-        -- Override the styling of any highlight group.
-        override = {
-          ["@lsp.type.parameter.typescript"] = { italic = false },
-          ["@lsp.type.parameter.typescriptreact"] = { italic = false },
-          ["@punctuation.delimiter.typescript"] = { italic = false },
-          ["@punctuation.delimiter.tsx"] = { italic = false },
-        },
-      })
-    end,
-    init = function()
-      -- vim.cmd("colorscheme nordic")
-      -- vim.cmd.hi("Comment gui=none")
-    end,
-  },
+      local c = require("colorbuddy")
+      local Group = c.Group
+      local s = c.styles
 
-  {
-    "datsfilipe/vesper.nvim",
-    lazy = true,
-    priority = 1000,
-    opts = {
-      transparent = true, -- Boolean: Sets the background to transparent
-      italics = {
-        comments = false, -- Boolean: Italicizes comments
-        keywords = false, -- Boolean: Italicizes keywords
-        functions = false, -- Boolean: Italicizes functions
-        strings = false, -- Boolean: Italicizes strings
-        variables = false, -- Boolean: Italicizes variables
-      },
-      overrides = {}, -- A dictionary of group names, can be a function returning a dictionary or a table.
-      palette_overrides = {},
-    },
-    init = function()
-      -- vim.cmd.colorscheme("vesper")
-      -- vim.cmd.hi("Comment gui=none")
-    end,
-  },
+      Group.new("@tag.attribute.tsx", c.colors.cyan)
+      Group.new("@tag.delimiter.tsx", c.colors.white)
+      Group.new("@tag.tsx", c.colors.violet)
+      Group.new("@tag.builtin.tsx", c.colors.violet, nil, s.NONE)
+      Group.new("@function.method.call.tsx", c.colors.blue)
+      Group.new("@variable.member.tsx", c.colors.blue)
+      Group.new("@lsp.type.method.typescriptreact", c.colors.blue)
+      Group.new("@lsp.type.method.typescript", c.colors.blue)
+      Group.new("@lsp.type.function.typescriptreact", c.colors.orange)
+      Group.new("@lsp.type.function.typescript", c.colors.orange)
+      Group.new("@function.call.tsx", c.colors.orange)
 
-  {
-    "gmr458/cold.nvim",
-    lazy = true,
-    priority = 1000,
-    opts = {},
-    init = function()
-      -- vim.cmd.colorscheme("cold")
-      -- vim.cmd.hi("Comment gui=none")
-    end,
-  },
-
-  {
-    "sho-87/kanagawa-paper.nvim",
-    lazy = true,
-    priority = 1000,
-    opts = {},
-    init = function()
-      -- vim.cmd.colorscheme("kanagawa-paper")
-      -- vim.cmd.hi("Comment gui=none")
-    end,
-  },
-
-  {
-    "marko-cerovac/material.nvim",
-    lazy = true,
-    priority = 1000,
-    opts = {},
-    init = function()
-      -- vim.cmd.colorscheme("kanagawa-paper")
-      -- vim.cmd.hi("Comment gui=none")
-    end,
-  },
-
-  {
-    "samharju/serene.nvim",
-    lazy = true,
-    priority = 1000,
-    opts = {},
-    init = function()
-      -- vim.cmd.colorscheme("kanagawa-paper")
-      -- vim.cmd.hi("Comment gui=none")
+      require("colorbuddy").setup()
     end,
   },
 }

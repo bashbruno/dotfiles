@@ -7,14 +7,10 @@ return {
     },
     opts = {
       ensure_installed = {
-        "bash",
         "html",
         "lua",
-        "markdown",
-        "vim",
         "dockerfile",
         "gitignore",
-        "html",
         "css",
         "go",
         "gomod",
@@ -23,8 +19,6 @@ return {
         "javascript",
         "typescript",
         "tsx",
-        "svelte",
-        "templ",
       },
       query_linter = {
         enable = true,

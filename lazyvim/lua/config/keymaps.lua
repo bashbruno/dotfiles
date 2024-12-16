@@ -3,6 +3,13 @@ vim.opt.swapfile = false
 -- https://templ.guide/commands-and-tools/ide-support#neovim--050
 vim.filetype.add({ extension = { templ = "templ" } })
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.wo.conceallevel = 0 -- Set conceallevel to 0 in markdown files
+  end,
+})
+
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -18,7 +25,7 @@ vim.opt.relativenumber = true
 vim.opt.mouse = "a"
 
 -- Don't show the mode, since it's already in status line
--- vim.opt.showmode = false
+vim.opt.showmode = true
 vim.opt.laststatus = 2 -- Or 3 for global statusline
 vim.opt.statusline = " %f %m %= %l:%c"
 
@@ -78,7 +85,7 @@ vim.diagnostic.config({
 })
 
 -- close current open buffer
-vim.keymap.set("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close current [X] buffer" })
+-- vim.keymap.set("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close current [X] buffer" })
 
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
@@ -96,6 +103,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- move up/down the file while keeping cursor in the middle
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-e>", "<C-u>zz")
+vim.keymap.set("v", "<C-d>", "<C-d>zz")
+vim.keymap.set("v", "<C-e>", "<C-u>zz")
 
 -- Highlight when yanking text
 vim.api.nvim_create_autocmd("TextYankPost", {

@@ -18,7 +18,25 @@ return {
       },
     },
     config = function()
+      local actions = require("telescope.actions")
+
       require("telescope").setup({
+        defaults = {
+          mappings = {
+            i = {
+              ["<C-q>"] = function(prompt_bufnr)
+                actions.smart_send_to_qflist(prompt_bufnr)
+                actions.open_qflist(prompt_bufnr)
+              end,
+            },
+            n = {
+              ["<C-q>"] = function(prompt_bufnr)
+                actions.smart_send_to_qflist(prompt_bufnr)
+                actions.open_qflist(prompt_bufnr)
+              end,
+            },
+          },
+        },
         extensions = {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown(),
