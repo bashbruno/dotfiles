@@ -5,6 +5,14 @@ return {
       colorscheme = "vscode",
     },
   },
+
+  {
+    "vague2k/vague.nvim",
+    config = function()
+      require("vague").setup({})
+    end,
+  },
+
   {
     name = "rose-pine",
     "rose-pine/neovim",
@@ -71,7 +79,6 @@ return {
 
   {
     "Mofiqul/vscode.nvim",
-
     lazy = true,
     config = function()
       local c = require("vscode.colors").get_colors()

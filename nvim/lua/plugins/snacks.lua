@@ -6,6 +6,12 @@ return {
       notifier = {
         enabled = false,
       },
+      scroll = {
+        enabled = false,
+      },
+      indent = {
+        enabled = false,
+      },
     },
   },
 }
