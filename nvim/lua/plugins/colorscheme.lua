@@ -2,14 +2,20 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "vscode",
+      colorscheme = "rose-pine-moon",
     },
   },
 
   {
     "vague2k/vague.nvim",
     config = function()
-      require("vague").setup({})
+      require("vague").setup({
+        transparent = true,
+        style = {
+          comments = "none",
+          strings = "none",
+        },
+      })
     end,
   },
 
@@ -28,7 +34,7 @@ return {
       highlight_groups = {
         -- StatusLine = { fg = "iris", bg = "iris", blend = 10 },
         -- CursorLineNr = { fg = "love" },
-        -- StatusLineNC = { fg = 'subtle', bg = 'surface' },
+        -- StatusLineNC = { fg = "subtle", bg = "surface" },
       },
     },
   },

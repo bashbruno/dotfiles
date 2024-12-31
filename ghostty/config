@@ -1,9 +1,20 @@
-font-family = BerkeleyMono Nerd Font
+## font-family = BerkeleyMono Nerd Font
 font-size = 19
 font-thicken = true
 
+## disable font ligatures
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+
 cursor-style = block
 cursor-style-blink = false
+adjust-cursor-thickness        = 3
+adjust-underline-position      = 3
+bold-is-bright                 = true
+link-url                       = true
+mouse-hide-while-typing        = true
+window-vsync                   = true
 
 confirm-close-surface = false
 clipboard-paste-protection = false
@@ -11,12 +22,14 @@ unfocused-split-opacity = 0.8
 copy-on-select = true
 clipboard-read = allow
 clipboard-write = allow
+macos-auto-secure-input        = true
+macos-secure-input-indication  = true
 
 title = "ghostty"
 
 window-width = 9999
 window-height = 9999
-window-padding-x = 4
+window-padding-x = 5
 window-padding-y = 0
 
 shell-integration = zsh
