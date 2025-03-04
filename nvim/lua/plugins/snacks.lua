@@ -1,7 +1,17 @@
+-- local function set_normal_float_highlight()
+--   vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+-- end
+--
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+--   pattern = "*",
+--   callback = set_normal_float_highlight,
+-- })
+
 return {
   {
     "folke/snacks.nvim",
     priority = 1000,
+    lazy = false,
     opts = {
       notifier = {
         enabled = false,
@@ -9,10 +19,19 @@ return {
       scroll = {
         enabled = false,
       },
+      dashboard = {
+        enabled = false,
+      },
       indent = {
         enabled = false,
       },
       picker = {
+        ui_select = true,
+        sources = {
+          files = { hidden = true },
+          grep = { hidden = true },
+          -- explorer = { hidden = true },
+        },
         layout = {
           preset = "telescope",
         },
@@ -28,24 +47,31 @@ return {
     },
 
     keys = {
+      -- {
+      --   "<C-n>",
+      --   function()
+      --     Snacks.explorer.open({ auto_close = true })
+      --   end,
+      --   desc = "Explorer",
+      -- },
       {
         "<leader>sg",
         function()
-          Snacks.picker.grep({ hidden = true })
+          Snacks.picker.grep()
         end,
         desc = "Grep",
       },
       {
         "<leader>sf",
         function()
-          Snacks.picker.files({ hidden = true })
+          Snacks.picker.files()
         end,
         desc = "Find Files",
       },
       {
         "<leader><space>",
         function()
-          Snacks.picker.buffers({ hidden = true })
+          Snacks.picker.buffers()
         end,
         desc = "Buffers",
       },
@@ -66,7 +92,7 @@ return {
       {
         "<leader>sw",
         function()
-          Snacks.picker.grep_word({ hidden = true })
+          Snacks.picker.grep_word()
         end,
         desc = "Visual selection or word",
         mode = { "n", "x" },
@@ -127,6 +153,13 @@ return {
           Snacks.picker.lsp_symbols()
         end,
         desc = "LSP Symbols",
+      },
+      {
+        "<leader>sS",
+        function()
+          Snacks.picker.lsp_workspace_symbols()
+        end,
+        desc = "LSP workspace Symbols",
       },
     },
   },

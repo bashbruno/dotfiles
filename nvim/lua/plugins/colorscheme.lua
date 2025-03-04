@@ -2,7 +2,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine-moon",
+      colorscheme = "vscode",
     },
   },
 
@@ -17,6 +17,27 @@ return {
         },
       })
     end,
+  },
+
+  {
+    "dgox16/oldworld.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      variant = "default",
+      styles = {
+        comments = { italic = false },
+        keywords = { italic = false },
+        identifiers = { italic = false },
+        functions = { italic = false },
+        variables = { italic = false },
+        booleans = { italic = false },
+      },
+      highlight_overrides = {
+        Normal = { bg = "#000000" },
+        ["@tag.attribute.tsx"] = { italic = false },
+      },
+    },
   },
 
   {
@@ -52,6 +73,12 @@ return {
         keywords = { italic = false },
       },
     },
+  },
+
+  {
+    "Vallen217/eidolon.nvim",
+    lazy = false,
+    priority = 1000,
   },
 
   {
@@ -94,6 +121,7 @@ return {
         disable_nvimtree_bg = true,
         group_overrides = {
           -- CursorLineNr = { fg = c.vscPink },
+          NormalFloat = { bg = "#000000" },
           StatusLine = { fg = c.vscGray, bg = "NONE", blend = 10 },
           ModeMsg = { fg = c.vscGray, bg = "NONE", blend = 10 },
           ["@variable.builtin.typescript"] = { fg = c.vscBlue, bg = "NONE" },

@@ -108,6 +108,8 @@ alias h='cd ~'
 alias sn='cd ~/.config'
 alias sf='nvim $(fzf --preview="bat --color=always {}")'
 
+alias tmux='tmux -2'
+
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
