@@ -1,16 +1,14 @@
-## font-family = BerkeleyMono Nerd Font
-font-size = 19
+# font-family = BerkeleyMono Nerd Font
+font-size = 20
 font-thicken = true
 
-## disable font ligatures
+# disable font ligatures
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
 
 cursor-style = block
 cursor-style-blink = false
-adjust-cursor-thickness        = 3
-adjust-underline-position      = 3
 bold-is-bright                 = true
 link-url                       = true
 mouse-hide-while-typing        = true
@@ -35,12 +33,14 @@ window-padding-y = 0
 shell-integration = zsh
 
 theme = rose-pine
-selection-background = #403d52
-background = #000000
+# selection-background = #403d52
+# background = #191724
+# background = #000000
+background = #0C0E13
 cursor-color = #ff0078
-palette = 2=#31748f
-palette = 10=#31748f
-palette = 4=#9ccfd8
-palette = 12=#9ccfd8
+# palette = 2=#31748f
+# palette = 10=#31748f
+# palette = 4=#9ccfd8
+# palette = 12=#9ccfd8
 window-theme = dark
 macos-titlebar-style = tabs

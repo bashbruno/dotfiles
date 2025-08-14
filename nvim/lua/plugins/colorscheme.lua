@@ -7,14 +7,102 @@ return {
   },
 
   {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    opts = {
+      no_italic = true,
+      term_colors = true,
+      transparent_background = false,
+      styles = {
+        comments = {},
+        conditionals = {},
+        loops = {},
+        functions = {},
+        keywords = {},
+        strings = {},
+        variables = {},
+        numbers = {},
+        booleans = {},
+        properties = {},
+        types = {},
+      },
+      color_overrides = {
+        mocha = {
+          base = "#000000",
+          mantle = "#000000",
+          crust = "#000000",
+        },
+      },
+    },
+  },
+
+  {
+    "AlexBeauchemin/poimandres.nvim",
+    branch = "improve-lsp-colors",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      -- disable_background = true,
+      disable_italics = true,
+    },
+  },
+
+  {
+    "ellisonleao/gruvbox.nvim",
+  },
+
+  {
+    "Shatur/neovim-ayu",
+  },
+
+  {
+    "rebelot/kanagawa.nvim",
+    opts = {
+      commentStyle = { italic = false, bold = false },
+      functionStyle = { italic = false, bold = false },
+      keywordStyle = { italic = false, bold = false },
+      statementStyle = { italic = false, bold = false },
+      typeStyle = { italic = false, bold = false },
+      dimInactive = true,
+      colors = {
+        theme = {
+          all = {
+            ui = {
+              bg_gutter = "none",
+              float = {
+                bg = "none",
+              },
+            },
+          },
+        },
+      },
+      overrides = function()
+        return {
+          -- Normal = { bg = "#181820" },
+        }
+      end,
+    },
+  },
+
+  { "datsfilipe/vesper.nvim" },
+
+  {
     "vague2k/vague.nvim",
     config = function()
       require("vague").setup({
-        transparent = true,
+        transparent = false,
         style = {
           comments = "none",
           strings = "none",
+          keyword_return = "none",
         },
+      })
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        pattern = "*",
+        callback = function()
+          vim.cmd("hi StatusLine guibg=NONE")
+        end,
       })
     end,
   },
@@ -34,7 +122,7 @@ return {
         booleans = { italic = false },
       },
       highlight_overrides = {
-        Normal = { bg = "#000000" },
+        Normal = { bg = "NONE" },
         ["@tag.attribute.tsx"] = { italic = false },
       },
     },
@@ -67,13 +155,59 @@ return {
     opts = {
       transparent = true,
       styles = {
-        sidebars = "transparent",
-        floats = "transparent",
+        -- sidebars = "transparent",
+        -- floats = "transparent",
         comments = { italic = false },
         keywords = { italic = false },
       },
     },
   },
+
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   priority = 1000,
+  --   config = function()
+  --     local transparent = true
+  --     local bg = "#011628"
+  --     local bg_dark = "#011423"
+  --     local bg_highlight = "#143652"
+  --     local bg_search = "#0A64AC"
+  --     local bg_visual = "#275378"
+  --     local fg = "#CBE0F0"
+  --     local fg_dark = "#B4D0E9"
+  --     local fg_gutter = "#627E97"
+  --     local border = "#547998"
+  --
+  --     require("tokyonight").setup({
+  --       style = "night",
+  --       transparent = transparent,
+  --
+  --       styles = {
+  --         comments = { italic = false },
+  --         keywords = { italic = false },
+  --         sidebars = transparent and "transparent" or "dark",
+  --         floats = transparent and "transparent" or "dark",
+  --       },
+  --       on_colors = function(colors)
+  --         colors.bg = transparent and colors.none or bg
+  --         colors.bg_dark = transparent and colors.none or bg_dark
+  --         colors.bg_float = transparent and colors.none or bg_dark
+  --         colors.bg_highlight = bg_highlight
+  --         colors.bg_popup = bg_dark
+  --         colors.bg_search = bg_search
+  --         colors.bg_sidebar = transparent and colors.none or bg_dark
+  --         colors.bg_statusline = transparent and colors.none or bg_dark
+  --         colors.bg_visual = bg_visual
+  --         colors.border = border
+  --         colors.fg = fg
+  --         colors.fg_dark = fg_dark
+  --         colors.fg_float = fg
+  --         colors.fg_gutter = fg_gutter
+  --         colors.fg_sidebar = fg_dark
+  --       end,
+  --     })
+  --   end,
+  -- },
 
   {
     "Vallen217/eidolon.nvim",
@@ -121,7 +255,10 @@ return {
         disable_nvimtree_bg = true,
         group_overrides = {
           -- CursorLineNr = { fg = c.vscPink },
+          -- Normal = { bg = "#111111" },
           NormalFloat = { bg = "#000000" },
+          -- LineNr = { bg = "#111111", fg = c.vscGray },
+          -- CursorLineNr = { bg = "#111111" },
           StatusLine = { fg = c.vscGray, bg = "NONE", blend = 10 },
           ModeMsg = { fg = c.vscGray, bg = "NONE", blend = 10 },
           ["@variable.builtin.typescript"] = { fg = c.vscBlue, bg = "NONE" },

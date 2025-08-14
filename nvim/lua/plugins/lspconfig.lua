@@ -26,6 +26,9 @@ return {
       inlay_hints = { enabled = false },
       servers = {
         eslint = {},
+        vtsls = {
+          -- enabled = false,
+        },
       },
     },
   },

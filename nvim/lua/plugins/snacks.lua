@@ -16,6 +16,12 @@ return {
       notifier = {
         enabled = false,
       },
+      git = {
+        enabled = false,
+      },
+      input = {
+        enabled = false,
+      },
       scroll = {
         enabled = false,
       },
@@ -26,6 +32,7 @@ return {
         enabled = false,
       },
       picker = {
+        enabled = false,
         ui_select = true,
         sources = {
           files = { hidden = true },

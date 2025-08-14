@@ -15,13 +15,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  {
-    dir = "colors/bruno",
-    name = "bruno",
-    config = function()
-      require("bruno").setup()
-    end,
-  },
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
